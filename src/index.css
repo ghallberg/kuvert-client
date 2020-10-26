@@ -1,3 +1,29 @@
+/* CSS - Cascading Style Sheet */
+/* Palette color codes */
+/* Palette URL: http://paletton.com/#uid=33v0u0kx2DujYJfpCFjDpspFLmb */
+
+.color-primary-0 { color: #0B76BB }	/* Main Primary color */
+.color-primary-1 { color: #549DCC }
+.color-primary-2 { color: #2F88C1 }
+.color-primary-3 { color: #065A91 }
+.color-primary-4 { color: #044671 }
+
+.color-secondary-1-0 { color: #FF4100 }	/* Main Secondary color (1) */
+.color-secondary-1-1 { color: #FF8960 }
+.color-secondary-1-2 { color: #FF6733 }
+.color-secondary-1-3 { color: #E23A00 }
+.color-secondary-1-4 { color: #B12D00 }
+
+.color-secondary-2-0 { color: #FFBC00 }	/* Main Secondary color (2) */
+.color-secondary-2-1 { color: #FFD560 }
+.color-secondary-2-2 { color: #FFCA33 }
+.color-secondary-2-3 { color: #E2A700 }
+.color-secondary-2-4 { color: #B18300 }
+
+.background-color-light { color: #F8F8FF }
+.background-color-dark { color: #F8F8FF }
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,6 +31,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: .background-color-light;
 }
 
 code {

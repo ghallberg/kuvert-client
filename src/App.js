@@ -2,9 +2,28 @@ import React from 'react';
 import './App.css';
 
 class KuvertCard extends React.Component {
+  state = {
+    show_state: false
+  };
+
+  handleClick = () => {
+    this.setState({
+      show_state: !this.state.show_state
+    });
+  }
+
   render() {
     const kuvert = this.props.kuvert;
-    return( <li>{kuvert.title} {kuvert.content}</li>);
+
+    return(
+      <li class="kuvert-card">
+        <h3 onClick={this.handleClick}>{kuvert.title}</h3>
+          { this.state.show_state &&
+              <div class="kuvert-content">
+                {kuvert.content}
+              </div>
+          }
+      </li>);
   }
 }
 
@@ -31,12 +50,10 @@ class KuvertList extends React.Component {
     );
 
     return (
-    <div>
-      <h2>Open Kuvert</h2>
-    <ul>
-      {listItems}
-    </ul>
-    </div>
+      <ul id="kuvert-list">
+        <h2>Recently Opened</h2>
+        {listItems}
+      </ul>
     )
   }
 }
@@ -50,7 +67,7 @@ class KuvertForm extends React.Component {
     this.handleDateChange = this.handleDateChange.bind(this);
     this.handleContentChange = this.handleContentChange.bind(this);
     this.handleTitleChange = this.handleTitleChange.bind(this);
-    this.handleOwnerChange = this.handleOwnerChange.bind(this);
+    this.handleTagChange = this.handleTagChange.bind(this);
   }
 
   handleSubmit(event) {
@@ -60,7 +77,7 @@ class KuvertForm extends React.Component {
       body: JSON.stringify(
         {content: this.state.content,
          title: this.state.title,
-        owner: this.state.owner,
+        tag: this.state.tag,
          opening_date: this.state.opening_date})
     };
     fetch('http://localhost:8080/kuvert', requestOptions)
@@ -69,8 +86,8 @@ class KuvertForm extends React.Component {
     event.preventDefault();
   }
 
-  handleOwnerChange(event) {
-    this.setState({owner: event.target.value})
+  handleTagChange(event) {
+    this.setState({tag: event.target.value})
   }
 
   handleContentChange(event) {
@@ -91,23 +108,13 @@ class KuvertForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <h2>New Kuvert</h2>
+      <form onSubmit={this.handleSubmit} id="kuvert-form">
+        <h2>Preserve Your Prediction</h2>
+        <input type="text" name="title" placeholder="Title" onChange={this.handleTitleChange} />
+        <input type="text" name="content" placeholder="Content" onChange={this.handleContentChange} />
+        <input type="text" name="tag" placeholder="Tag" onChange={this.handleTagChange} />
         <label>
-          Title:
-          <input type="text" name="title" onChange={this.handleTitleChange} />
-        </label>
-        <label>
-          Content:
-          <input type="text" name="content" onChange={this.handleContentChange} />
-        </label>
-        <label>
-          Owner:
-          <input type="text" name="owner" onChange={this.handleOwnerChange} />
-        </label>
-        <label>
-          Opening date:
-          <input type="date" name="opening_date" onChange={this.handleDateChange}/>
+          Opening date: <input type="date" name="opening_date" onChange={this.handleDateChange}/>
         </label>
         <input type="submit" value="submit" />
       </form>
@@ -121,9 +128,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1> KUVERT </h1>
-        <KuvertForm />
-        <KuvertList />
       </header>
+      <KuvertForm />
+      <KuvertList />
     </div>
   );
 }
