@@ -1,0 +1,97 @@
+/* CSS - Cascading Style Sheet */
+/* Palette color codes */
+/* Palette URL: http://paletton.com/#uid=33v0u0kx2DujYJfpCFjDpspFLmb */
+
+.color-primary-0 { color: #0B76BB }	/* Main Primary color */
+.color-primary-1 { color: #549DCC }
+.color-primary-2 { color: #2F88C1 }
+.color-primary-3 { color: #065A91 }
+.color-primary-4 { color: #044671 }
+
+.color-secondary-1-0 { color: #FF4100 }	/* Main Secondary color (1) */
+.color-secondary-1-1 { color: #FF8960 }
+.color-secondary-1-2 { color: #FF6733 }
+.color-secondary-1-3 { color: #E23A00 }
+.color-secondary-1-4 { color: #B12D00 }
+
+.color-secondary-2-0 { color: #FFBC00 }	/* Main Secondary color (2) */
+.color-secondary-2-1 { color: #FFD560 }
+.color-secondary-2-2 { color: #FFCA33 }
+.color-secondary-2-3 { color: #E2A700 }
+.color-secondary-2-4 { color: #B18300 }
+
+.App {
+  display: grid;
+  grid-template-columns: [left] 50% [right] 50%;
+  grid-template-rows: [header] 10vh [content] 100%;
+  background-color: .background-color-light;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  min-height: 10vh;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: header;
+  grid-row-end: header;
+  text-align: center;
+  align: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #FF4100;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#kuvert-form {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+#kuvert-form > input {
+  display: block;
+}
+
+#kuvert-form > label {
+  display: block;
+  margin: auto;
+}
+
+label input {
+  display: inline;
+}
+
+#kuvert-list {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  list-style-type: none;
+}
+
+.kuvert-card {
+  width: 50%;
+  border-radius: 0.5em;
+  border: 2px solid black;
+  list-style-position: inside;
+  padding: 2px;
+}

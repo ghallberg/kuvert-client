@@ -2,4 +2,4 @@ dev:
 	npx yarn start
 
 test:
-	npx yarn tes
+	npx yarn test
