@@ -17,7 +17,7 @@ class KuvertPage extends React.Component{
       headers: { 'Content-Type': 'application/json' },
     };
 
-    fetch('http://localhost:8080/kuvert/' + this.kuvertId, requestOptions)
+    fetch(process.env.REACT_APP_SERVER_URL+'/kuvert/' + this.kuvertId, requestOptions)
       .then(response => response.json())
       .then((data) => {
         if (data.kuvert) {

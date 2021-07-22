@@ -39,7 +39,7 @@ class KuvertList extends React.Component {
         headers: { 'Content-Type': 'application/json' },
     };
 
-    fetch('http://localhost:8080/kuvert/open', requestOptions)
+    fetch(process.env.REACT_APP_SERVER_URL+'/kuvert/open', requestOptions)
         .then(response => response.json())
         .then(data => this.setState({kuvert: data.kuvert}));
   }

@@ -23,7 +23,7 @@ class KuvertForm extends React.Component {
         tag: this.state.tag,
          opening_date: this.state.opening_date})
     };
-    fetch('http://localhost:8080/kuvert', requestOptions)
+    fetch(process.env.REACT_APP_SERVER_URL+'/kuvert', requestOptions)
         .then(response => response.json())
         .then(data => this.props.handleNewKuvert(data.id));
     event.preventDefault();
