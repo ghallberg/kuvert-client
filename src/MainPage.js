@@ -1,19 +1,10 @@
-import { Link } from 'react-router-dom';
-import React from 'react';
 import './MainPage.css';
+
+import React from 'react';
+
 import KuvertForm from './KuvertForm';
 import KuvertList from './KuvertList';
-
-class NewKuvertBanner extends React.Component {
-  render() {
-    return (
-      this.props.newKuvertId &&
-        <span id="new-kuvert-banner">
-          Your new kuvert is at: <Link to={"/kuvert/"+this.props.newKuvertId}> {this.props.newKuvertId} </Link>
-        </span>
-    )
-  }
-}
+import NewKuvertBanner from './NewKuvertBanner';
 
 class MainPage extends React.Component{
   constructor(props) {
