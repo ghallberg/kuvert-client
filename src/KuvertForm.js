@@ -15,18 +15,20 @@ class KuvertForm extends React.Component {
 
   handleSubmit(event) {
     const requestOptions = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(
-        {content: this.state.content,
-         title: this.state.title,
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        content: this.state.content,
+        title: this.state.title,
         tag: this.state.tag,
-         opening_date: this.state.opening_date})
+        opening_date: this.state.opening_date
+      })
     };
     fetch(process.env.REACT_APP_SERVER_URL+'/kuvert', requestOptions)
         .then(response => response.json())
         .then(data => this.props.handleNewKuvert(data.id));
     event.preventDefault();
+
     this.setState({
       title: '',
       content: '',

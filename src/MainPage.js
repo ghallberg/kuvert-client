@@ -9,7 +9,7 @@ class NewKuvertBanner extends React.Component {
     return (
       this.props.newKuvertId &&
         <span id="new-kuvert-banner">
-          Your new kuvert is at: <Link to={"/kuvert/"+this.props.newKuvertId}> {this.props.newKuvertId} </Link>
+          Your new kuvert is at: <Link to={"/kuvert/"+this.state.newKuvertId}> {this.state.newKuvertId} </Link>
         </span>
     )
   }
