@@ -44,17 +44,15 @@ class KuvertPage extends React.Component{
     const { kuvert, isLoaded, error } = this.state;
     if (isLoaded && kuvert) {
       return (
-        <div>
-          <div className="KuvertPage">
-            <h1>
-              {kuvert.title} - {kuvert.opening_date}
-            </h1>
-            {kuvert.content
-                ? <p>Content: {kuvert.content}</p>
-                : <p>NOT OPENED YET!</p> }
+        <div className="kuvert-page">
+          <h1>
+            {kuvert.title} - {kuvert.opening_date}
+          </h1>
+          {kuvert.content
+              ? <p>Content: {kuvert.content}</p>
+              : <p>NOT OPENED YET!</p> }
 
-            <p>Created at: {kuvert.created_at}</p>
-          </div>
+          <p>Created at: {kuvert.created_at}</p>
         </div>
       )
     } else if (isLoaded && error) {

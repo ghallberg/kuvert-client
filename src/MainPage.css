@@ -20,60 +20,38 @@
 .color-secondary-2-3 { color: #E2A700 }
 .color-secondary-2-4 { color: #B18300 }
 
+
 .App {
   display: grid;
-  grid-template-columns: [left] 50% [right] 50%;
-  grid-template-rows: [header] 10vh [content] 100%;
+  grid-template-rows: [header] 15vh [content-row] 100%;
   background-color: .background-color-light;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {
   min-height: 10vh;
-  grid-column-start: 1;
-  grid-column-end: 3;
   grid-row-start: header;
   grid-row-end: header;
   text-align: center;
-  align: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: #FF4100;
+  border-bottom: 2px solid #0B76BB;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.MainPage {
+  display: grid;
+  grid-template-columns: [left] 50% [right] 50%;
+  grid-row-start: content-row;
+  grid-row-end: content-row;
+  background-color: .background-color-light;
 }
 
 #kuvert-form {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 2;
-  grid-row-end: 3;
+  grid-column-start: left;
+  grid-column-end: left;
 }
 
 #kuvert-form > input {
   display: block;
-}
-
-#kuvert-form > label {
-  display: block;
-  margin: auto;
 }
 
 label input {
@@ -81,15 +59,12 @@ label input {
 }
 
 #kuvert-list {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 2;
-  grid-row-end: 3;
+  grid-column-start: right;
+  grid-column-end: right;
   list-style-type: none;
 }
 
 .kuvert-card {
-  width: 50%;
   border-radius: 0.5em;
   border: 2px solid black;
   list-style-position: inside;

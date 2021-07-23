@@ -1,5 +1,3 @@
-import './MainPage.css';
-
 import React from 'react';
 
 import KuvertForm from './KuvertForm';
@@ -19,7 +17,7 @@ class MainPage extends React.Component{
 
   render() {
     return (
-      <div>
+      <div className="MainPage">
         <NewKuvertBanner newKuvertId={this.state.newKuvertId} />
         <KuvertForm handleNewKuvert={this.handleNewKuvertId} />
         <KuvertList />
