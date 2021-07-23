@@ -23,7 +23,7 @@ class MainPage extends React.Component{
   }
 
   handleNewKuvertId = (id) => {
-    this.setState({ newKuvertId: id });
+    this.setState({ newKuvertId: id.toString() });
   }
 
   render() {
